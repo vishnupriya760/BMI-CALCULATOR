@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+</head>
+<style>
+.bo{
+     height:400px;
+    width:380px;  
+    margin-left:450px;
+    margin-top:50px;
+border: 1.3px solid black;
+background-color:rgb(255, 249, 240);
+border-radius: 5px ;
+box-shadow: rgba(32, 32, 32, 0.2) 0px 7px 29px 0px;   
+}
+.ji{
+
+    margin-top:30px;
+    margin-left:85px;   
+}
+.ki{
+    margin-left:10px;
+}
+.ki1{
+    margin-left: 10px;
+}
+.jk{
+    margin-left:10px;
+}
+.jk1{
+    margin-left:10px;
+}
+.fi{
+    margin-left:10px;
+    color:rgb(53, 52, 52);
+    height:25px;
+    font-size: medium;
+    /* border-radius:1px; */
+}
+
+</style>
+<body>  
+    <div class="bo">
+    <h2 class="ji">BMI Calculator </h2> 
+    <label class="ki">Enter height(cm)</label><br><br>
+    <input type="text" class="jk" id="he"><br><br>
+    <label class="ki1">Enter Weight(kg)</label><br><br>
+    <input type="text" class="jk1" id="we"><br><br>
+    <button onclick="tet()" class="fi" >Calculate BMI</button>
+    
+    <!-- <p id="resul"></p> -->
+
+    <h2 id="hei"> </h2>
+    <h3 id="wei"></h3>
+    </div>
+    <script>
+       
+        function tet(){
+            let a = document.getElementById("he").value
+            console.log(a);
+            let b= document.getElementById("we").value
+            console.log(b);
+            let a2=a/100
+            let c=b/(a2*a2)
+            let d=c.toFixed(2)
+            console.log(d);
+            
+            let result =document.getElementById("hei").textContent=`Your BMI Calculation is ${d}`
+            console.log(result);
+            function wey(){
+                if(d<18.5){
+                    return "underweight";
+                }else if(d>=18.5 && d<25.0){
+                    return "normal weight"
+                }else if (d>=25.0 && d <30.0){
+                    return "overweight";
+                }else{
+                    return "obese";
+                }
+            }
+            document.getElementById("wei").innerHTML=wey();
+        }
+
+
+        
+           
+           
+        
+        
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
